@@ -10,6 +10,10 @@ const server = createServer(app);
 
 app.use(cors({ origin: '*' }));
 
+app.get("/ping", (req, res) => {
+  res.send("pong");
+});
+
 const io = new Server(server, {
   cors: { origin: '*' },
 });
